@@ -1,0 +1,68 @@
+<section class="page-intro">
+  <div class="container grid">
+    <div>
+      <p class="kicker">Contact</p>
+      <h1>Join the next tune</h1>
+    </div>
+    <div class="measure">
+      <p class="lede">If you would like to play as a <strong>lead musician</strong> in the next tune, or join the second-part <strong>all-join-in medley</strong> (from ABRSM Grade 5), please contact us here.</p>
+      <p>We also welcome enquiries from educators, cultural foundations and the press.</p>
+      <article class="email-card">
+        <p>Prefer email? Write to us directly.</p>
+        <p><a href="mailto:silviacrastan@icloud.com">silviacrastan@icloud.com</a></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="participation-contact-form">
+  <div class="container">
+    <div class="section-title">
+      <h2>Tell us how you would like to join</h2>
+      <p>Sending opens a new message in your email app with everything filled in.</p>
+    </div>
+    <form class="contact-form" id="contact-form">
+      <div class="grid">
+        <label>
+          Name
+          <input type="text" name="name" autocomplete="name" required>
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" autocomplete="email" required>
+        </label>
+      </div>
+      <label>
+        Participation interest
+        <select name="interest">
+          <option value="">Select an option</option>
+          <option>Lead musician</option>
+          <option>All-join-in medley (from Grade 5)</option>
+          <option>Musical or educational institution</option>
+          <option>Foundation support</option>
+          <option>Press or other enquiry</option>
+        </select>
+      </label>
+      <label>
+        Message
+        <textarea name="message" required></textarea>
+      </label>
+      <button type="submit">Send message</button>
+      <p class="hint">Your message goes to silviacrastan@icloud.com. Nothing is stored on this site.</p>
+    </form>
+  </div>
+</section>
+
+<script>
+  document.getElementById('contact-form').addEventListener('submit', function (event) {
+    event.preventDefault();
+    var f = event.target;
+    var interest = f.interest.value || 'General enquiry';
+    var subject = '1 TUNE and 6 CONTINENTS: ' + interest;
+    var body = 'Name: ' + f.name.value + '\nEmail: ' + f.email.value +
+      '\nParticipation interest: ' + interest + '\n\n' + f.message.value;
+    window.location.href = 'mailto:silviacrastan@icloud.com' +
+      '?subject=' + encodeURIComponent(subject) +
+      '&body=' + encodeURIComponent(body);
+  });
+</script>
